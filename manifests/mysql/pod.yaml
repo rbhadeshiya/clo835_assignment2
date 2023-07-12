@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql
+  namespace: nsmysql
+  labels:
+    owner: Rushi
+spec:
+  containers:
+  - name: mysql
+    image: 907620523525.dkr.ecr.us-east-1.amazonaws.com/db_mysql:latest
+    ports:
+    - name: mysql
+      containerPort: 3306
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: password
